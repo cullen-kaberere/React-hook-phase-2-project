@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import NavBar from './components/NavBar';
-import BudgetForm from './components/BudgetForm';
-import ExpenseForm from './components/ExpenseForm';
+import NavBar from "./Component/NavBar";
+import BudgetForm from "./Component/BudgetForm";
+import ExpenseForm from "./Component/ExpenseForm";
 import ExpenseList from './components/ExpenseList';
 import Summary from './components/Summary';
 
