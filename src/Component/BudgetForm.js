@@ -15,7 +15,7 @@ function BudgetForm({ setBudget }) {
 
   return (
     <div className="budget-form-container">
-      <h1>Ck Budget Master</h1>
+      
       <div className="welcome-box">
         <h2>Hello.</h2>
         <p>Welcome to Ck Budget Master. Track, save, and thrive with our easy-to-use budgeting tool.</p>

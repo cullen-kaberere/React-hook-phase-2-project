@@ -18,7 +18,6 @@ function ExpenseForm({ budget, expenses, addExpense }) {
     <div>
       {/* Card layout for the Summary on Add Expense page */}
       <Card>
-      <h2>Ck Budget Master</h2>
       <form onSubmit={handleSubmit}>
         <label>Expenses Details:</label>
         <input
