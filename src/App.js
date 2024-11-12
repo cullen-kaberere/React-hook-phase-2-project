@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from "./Component/NavBar";
 import BudgetForm from "./Component/BudgetForm";
 import ExpenseForm from "./Component/ExpenseForm";
-import ExpenseList from './components/ExpenseList';
-import Summary from './components/Summary';
+import ExpenseList from './Component/ExpenseList';
+import Summary from './Component/Summary';
 
 function App() {
   const [budget, setBudget] = useState(0);
