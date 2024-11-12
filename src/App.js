@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import BudgetForm from './components/BudgetForm';
+import ExpenseForm from './components/ExpenseForm';
+import ExpenseList from './components/ExpenseList';
+import Summary from './components/Summary';
 
 function App() {
+  const [budget, setBudget] = useState(0);
+  const [expenses, setExpenses] = useState([]);
+
+  // Fetch expenses from json-server on mount
+  useEffect(() => {
+    fetch('http://localhost:3000/expenses')
+      .then(res => res.json())
+      .then(data => setExpenses(data));
+  }, []);
+
+  // Function to add a new expense
+  const addExpense = (newExpense) => {
+    setExpenses(prevExpenses => [...prevExpenses, newExpense]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<BudgetForm setBudget={setBudget} />} />
+        <Route path="/add-expense" element={<ExpenseForm addExpense={addExpense} />} />
+        <Route path="/summary" element={<Summary budget={budget} expenses={expenses} />} />
+        <Route path="/expenses" element={<ExpenseList expenses={expenses} />} />
+      </Routes>
+    </Router>
   );
 }
 
