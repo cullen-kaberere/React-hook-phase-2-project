@@ -1,3 +1,65 @@
+.expense-form-card {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.expense-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.expense-amount-group {
+  display: flex;
+  align-items: center;
+}
+
+.expense-amount-group span {
+  padding: 0 10px;
+  background-color: #00008B;
+  color: white;
+  border-radius: 4px 0 0 4px;
+}
+
+.add-expense-button {
+  background-color: #00008B;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.back-button {
+  background-color: #00008B;
+  color: white;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.back-button:hover,
+.add-expense-button:hover {
+  background-color: #3333ff;
+}
+
+h2 {
+  text-align: center;
+  color: #00008B;
+}
+
+.summary-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
 .App {
   text-align: center;
 }

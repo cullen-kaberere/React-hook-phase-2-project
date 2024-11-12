@@ -1,43 +1,50 @@
 import React, { useState } from 'react';
+import Card from './Card'; // Import the Card component
+import Summary from './Summary';
 
-function ExpenseForm({ addExpense }) {
+function ExpenseForm({ budget, expenses, addExpense }) {
   const [description, setDescription] = useState('');
   const [amount, setAmount] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newExpense = { description, amount: parseFloat(amount) };
-
-    fetch('http://localhost:3000/expenses', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newExpense),
-    })
-      .then(res => res.json())
-      .then(data => addExpense(data));
-
+    addExpense(newExpense);
     setDescription('');
     setAmount('');
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Description:</label>
-      <input
-        type="text"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-        required
-      />
-      <label>Amount:</label>
-      <input
-        type="number"
-        value={amount}
-        onChange={(e) => setAmount(e.target.value)}
-        required
-      />
-      <button type="submit">Add Expense</button>
-    </form>
+    <div>
+      {/* Card layout for the Summary on Add Expense page */}
+      <Card>
+      <h2>Ck Budget Master</h2>
+      <form onSubmit={handleSubmit}>
+        <label>Expenses Details:</label>
+        <input
+          type="text"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          placeholder="Enter expense description"
+          required
+        />
+
+        <label>Expenses Amount:</label>
+        <span>Ksh</span>
+        <input
+          type="number"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          placeholder="Enter expense amount"
+          required
+        />
+        <button type="submit">Add Expenses</button>
+      </form>
+
+      
+        <Summary budget={budget} expenses={expenses} />
+      </Card>
+    </div>
   );
 }
 

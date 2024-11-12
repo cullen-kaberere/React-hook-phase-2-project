@@ -1,15 +1,25 @@
 import React from 'react';
 
 function Summary({ budget, expenses }) {
-  const totalExpenses = expenses.reduce((total, expense) => total + expense.amount, 0);
-  const remaining = budget - totalExpenses;
+  // Calculate total expenses and remaining balance
+  const totalExpenses = expenses.reduce((acc, expense) => acc + expense.amount, 0);
+  const balance = budget - totalExpenses;
 
   return (
-    <div>
-      <h2>Budget Summary</h2>
-      <p>Total Budget: Ksh{budget}</p>
-      <p>Total Expenses: Ksh{totalExpenses}</p>
-      <p>Remaining Balance: Ksh{remaining}</p>
+    <div className="summary-card">
+      <h2>Summary</h2>
+      <div>Budget: Ksh {budget.toFixed(2)}</div>
+      <div>Expenses: Ksh {totalExpenses.toFixed(2)}</div>
+      <div>Balance: Ksh {balance.toFixed(2)}</div>
+
+      <h3>Expense List</h3>
+      <ul>
+        {expenses.map((expense, index) => (
+          <li key={index}>
+            {expense.description}: Ksh {expense.amount.toFixed(2)}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

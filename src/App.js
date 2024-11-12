@@ -19,6 +19,7 @@ function App() {
 
   // Function to add a new expense
   const addExpense = (newExpense) => {
+    // Add the new expense to the list
     setExpenses(prevExpenses => [...prevExpenses, newExpense]);
   };
 
@@ -27,8 +28,21 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<BudgetForm setBudget={setBudget} />} />
-        <Route path="/add-expense" element={<ExpenseForm addExpense={addExpense} />} />
-        <Route path="/summary" element={<Summary budget={budget} expenses={expenses} />} />
+        <Route 
+          path="/add-expense" 
+          element={<ExpenseForm 
+            addExpense={addExpense} 
+            budget={budget} 
+            expenses={expenses} 
+          />} 
+        />
+        <Route 
+          path="/summary" 
+          element={<Summary 
+            budget={budget} 
+            expenses={expenses} 
+          />} 
+        />
         <Route path="/expenses" element={<ExpenseList expenses={expenses} />} />
       </Routes>
     </Router>
