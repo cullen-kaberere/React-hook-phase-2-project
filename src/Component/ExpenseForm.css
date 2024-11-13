@@ -1,0 +1,81 @@
+/* General Styling for ExpenseForm Component */
+.header {
+    text-align: center;
+    font-size: 1.5em;
+    color: #00174a;
+    margin-bottom: 20px;
+  }
+  
+  .expense-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .add-expense-btn {
+    background-color: #00174a;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .add-expense-btn:hover {
+    background-color: #002a6a;
+  }
+  
+  /* Currency Converter Styling */
+  .currency-converter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .currency-converter label {
+    margin-right: 10px;
+  }
+  
+  .currency-converter select {
+    padding: 5px;
+    margin-right: 10px;
+    font-size: 1em;
+  }
+  
+  .convert-btn {
+    background-color: #00174a;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .convert-btn:hover {
+    background-color: #002a6a;
+  }
+  

@@ -1,0 +1,28 @@
+/* Styling for Summary Component */
+.summary-card {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .summary-card h2,
+  .summary-card h3 {
+    color: #00174a;
+    margin-bottom: 10px;
+  }
+  
+  .summary-card div {
+    font-size: 1.2em;
+    margin: 5px 0;
+  }
+  
+  .summary-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .summary-card li {
+    padding: 5px 0;
+    font-size: 1.1em;
+  }
+  
