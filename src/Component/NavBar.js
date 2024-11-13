@@ -9,7 +9,7 @@ function NavBar() {
       <div className="nav-links">
         <Link to="/" className="nav-link">Set budget</Link>
         <Link to="/add-expense" className="nav-link">Add Expense</Link>
-        <Link to="/summary" className="nav-link">Summary</Link>
+        
         <Link to="/expenses" className="nav-link">All Expenses</Link>
       </div>
     </nav>
