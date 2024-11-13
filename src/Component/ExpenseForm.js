@@ -52,7 +52,7 @@ function ExpenseForm({ budget, expenses, addExpense }) {
   return (
     <div>
       <Card>
-        <h2 className="header">Ck Budget Master</h2>
+        <h2 className="header">Add Expenses</h2>
         <form onSubmit={handleSubmit} className="expense-form">
           <div className="form-group">
             <label>Expenses Details:</label>

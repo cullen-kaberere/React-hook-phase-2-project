@@ -7,7 +7,7 @@ function Summary({ budget, expenses, exchangeRate, currency }) {
 
   return (
     <div className="summary-card">
-      <h2>Summary</h2>
+      
       <div>Budget: {currency} { (budget * exchangeRate).toFixed(2)}</div>
       <div>Expenses: {currency} {totalExpenses.toFixed(2)}</div>
       <div>Balance: {currency} {balance.toFixed(2)}</div>

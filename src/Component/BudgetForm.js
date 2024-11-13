@@ -22,13 +22,13 @@ function BudgetForm({ setBudget }) {
         <form onSubmit={handleSubmit} className="budget-form">
           <label htmlFor="budget-input">Please Enter Your Budget:</label>
           <div className="input-group">
-            <span className="currency">Ksh</span>
+            
             <input
               id="budget-input"
               type="number"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Enter Your Budget"
+              placeholder="Enter Your Budget in Ksh"
               required
             />
             <button type="submit" className="calculate-button">Calculate</button>

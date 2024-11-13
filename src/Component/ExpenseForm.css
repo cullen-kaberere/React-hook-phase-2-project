@@ -8,9 +8,11 @@
   
   .expense-form {
     display: flex;
-    justify-content: center;
+    /*justify-content: space-between;*/
+    gap: 270px;
     align-items: center;
     margin-top: 20px;
+    margin-left: 330px;
   }
   
   .form-group {

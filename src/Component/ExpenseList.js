@@ -11,7 +11,7 @@ function ExpenseList({ expenses }) {
       <ul>
         {expenses.map((expense) => (
           <li key={expense.id}>
-            {expense.description}: ${expense.amount.toFixed(2)}
+            {expense.description}: Ksh{expense.amount.toFixed(2)}
           </li>
         ))}
       </ul>
