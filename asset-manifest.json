@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/React-hook-phase-2-project/static/css/main.e2348f4c.css",
-    "main.js": "/React-hook-phase-2-project/static/js/main.5e98f001.js",
+    "main.css": "/React-hook-phase-2-project/static/css/main.cd98b3a0.css",
+    "main.js": "/React-hook-phase-2-project/static/js/main.d128921e.js",
     "static/js/453.ed3810f9.chunk.js": "/React-hook-phase-2-project/static/js/453.ed3810f9.chunk.js",
     "index.html": "/React-hook-phase-2-project/index.html",
-    "main.e2348f4c.css.map": "/React-hook-phase-2-project/static/css/main.e2348f4c.css.map",
-    "main.5e98f001.js.map": "/React-hook-phase-2-project/static/js/main.5e98f001.js.map",
+    "main.cd98b3a0.css.map": "/React-hook-phase-2-project/static/css/main.cd98b3a0.css.map",
+    "main.d128921e.js.map": "/React-hook-phase-2-project/static/js/main.d128921e.js.map",
     "453.ed3810f9.chunk.js.map": "/React-hook-phase-2-project/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2348f4c.css",
-    "static/js/main.5e98f001.js"
+    "static/css/main.cd98b3a0.css",
+    "static/js/main.d128921e.js"
   ]
 }
