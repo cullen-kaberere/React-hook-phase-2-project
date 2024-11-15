@@ -67,7 +67,7 @@ function ExpenseForm({ budget, expenses, addExpense }) {
 
           <div className="form-group">
             <label>Expenses Amount:</label>
-            <span>Ksh</span>
+
             <input
               type="number"
               value={amount}
