@@ -66,4 +66,10 @@
   .cancel-btn:hover {
     background-color: #8a939b;
   }
-  
+  .expense-list input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px; /* Adjust the width as needed */
+    margin-bottom: 20px;
+  }

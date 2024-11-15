@@ -1,67 +1,71 @@
-
 import React, { useState } from 'react';
 import './ExpenseList.css';
 
 function ExpenseList({ expenses, setExpenses }) {
-  const [editingId, setEditingId] = useState(null); // Track the currently editing expense ID
-  const [editedDescription, setEditedDescription] = useState('');
-  const [editedAmount, setEditedAmount] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [editingExpenseId, setEditingExpenseId] = useState(null);
 
-  const startEditing = (expense) => {
-    setEditingId(expense.id);
-    setEditedDescription(expense.description);
-    setEditedAmount(expense.amount);
+  const startEditing = (expenseId) => {
+    setEditingExpenseId(expenseId);
   };
 
   const cancelEditing = () => {
-    setEditingId(null);
-    setEditedDescription('');
-    setEditedAmount('');
+    setEditingExpenseId(null);
   };
 
-  const saveEditing = (id) => {
+  const saveEditing = (expenseId, newDescription, newAmount) => {
     const updatedExpenses = expenses.map((expense) =>
-      expense.id === id
-        ? { ...expense, description: editedDescription, amount: parseFloat(editedAmount) }
+      expense.id === expenseId
+        ? { ...expense, description: newDescription, amount: parseFloat(newAmount) }
         : expense
     );
     setExpenses(updatedExpenses);
-    cancelEditing();
+    setEditingExpenseId(null);
   };
 
-  const handleDelete = (id) => {
-    const updatedExpenses = expenses.filter(expense => expense.id !== id);
+  const handleDelete = (expenseId) => {
+    const updatedExpenses = expenses.filter((expense) => expense.id !== expenseId);
     setExpenses(updatedExpenses);
   };
 
+  const filteredExpenses = expenses.filter((expense) =>
+    expense.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="expense-list">
-      {expenses.map((expense) => (
+      <input
+        type="text"
+        placeholder="Search expenses"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      {filteredExpenses.map((expense) => (
         <div key={expense.id} className="expense-item">
-          {editingId === expense.id ? (
+          {editingExpenseId === expense.id ? (
             <>
               <input
                 type="text"
-                value={editedDescription}
-                onChange={(e) => setEditedDescription(e.target.value)}
+                value={expense.description}
+                onChange={(e) => saveEditing(expense.id, e.target.value, expense.amount)}
                 placeholder="Edit description"
                 className="edit-input"
               />
               <input
                 type="number"
-                value={editedAmount}
-                onChange={(e) => setEditedAmount(e.target.value)}
+                value={expense.amount}
+                onChange={(e) => saveEditing(expense.id, expense.description, e.target.value)}
                 placeholder="Edit amount"
                 className="edit-input"
               />
-              <button className="save-btn" onClick={() => saveEditing(expense.id)}>Save</button>
-              <button className="cancel-btn" onClick={cancelEditing}>Cancel</button>
+              <button className="save-btn" onClick={() => cancelEditing()}>Save</button>
+              <button className="cancel-btn" onClick={() => cancelEditing()}>Cancel</button>
             </>
           ) : (
             <>
               <span>{expense.description}</span>
-              <span>Ksh{expense.amount}</span>
-              <button className="edit-btn" onClick={() => startEditing(expense)}>Edit</button>
+              <span>Ksh {expense.amount}</span>
+              <button className="edit-btn" onClick={() => startEditing(expense.id)}>Edit</button>
               <button className="delete-btn" onClick={() => handleDelete(expense.id)}>Delete</button>
             </>
           )}
