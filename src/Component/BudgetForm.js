@@ -12,7 +12,7 @@ function BudgetForm({ setBudget }) {
     e.preventDefault();
     const budgetData = {
       title,
-      
+
       amount: parseFloat(amount),
     };
 
