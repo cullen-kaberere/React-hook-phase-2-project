@@ -47,7 +47,7 @@ function BudgetForm({ setBudget }) {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="Enter budget title"
+            placeholder="Eg. Trip to Msa"
             required
           />
 
